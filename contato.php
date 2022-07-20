@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 <?php
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
@@ -18,24 +14,14 @@ if(isset($_POST['enviar'])){
     $assunto = $_POST['assunto'];
     $mensagem = $_POST['mensagem'];
 
-<<<<<<< Updated upstream
     //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
 
     try {
-=======
-
-//Create an instance; passing `true` enables exceptions
-    $mail = new PHPMailer(true);
-
-    try {
-        
->>>>>>> Stashed changes
         $mail->isSMTP();
         $mail->Host = 'smtp.mailtrap.io';
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
-<<<<<<< Updated upstream
         $mail->Username = 'fd19a4733332bc';
         $mail->Password = '12f36e49f4953d';
 
@@ -53,45 +39,28 @@ if(isset($_POST['enviar'])){
         //Content
         $mail->isHTML(true);                                  
         //Set email format to HTML
-=======
-        $mail->Username = '675bb3ce4de643';
-        $mail->Password = '8428fc52b6cf56';
-        //Recipients
-        $mail->setFrom('from@example.com', 'Mailer');
-        $mail->addAddress('joe@example.net', 'Joe User');     //Add a recipient
-        $mail->addAddress('ellen@example.com');               //Name is optional
-        $mail->addReplyTo('info@example.com', 'Information');
-        $mail->addCC('cc@example.com');
-        $mail->addBCC('bcc@example.com');
-        
+        $mail->Subject = "Contato Site -".$assunto;
+        //Corpo da mensagem em formato HTML
 
-        //Content
-        $mail->isHTML(true);                                  //Set email format to HTML
->>>>>>> Stashed changes
-        $mail->Subject = 'Here is the subject';
-        $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+        $mail->Body    = "<b>Nome:</b> $nome <br> <b>E-mail:</b> $email <br> <b>Assunto $assunto</b> <br> <b>Mensagem:<b> $mensagem";
+
+        //Corpo da mensagem em formato texto puro
+        $mail->AltBody = "Nome: $nome \n E-mail: $email \n Assunto: $assunto \n Mensagem: $mensagem";
 
         $mail->send();
-        echo 'Message has been sent';
+        echo 'Mensagem foi enviada com sucesso';
     } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo "Mensagem não enviada, tente novamente: {$mail->ErrorInfo}";
     }
-<<<<<<< Updated upstream
 } // final do if enviar
 ?>
-=======
-}
-?>
-
->>>>>>> Stashed changes
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
+    <title>Document</title>
 </head>
 <body>
     <h1>Contato usando phpmailer</h1>
