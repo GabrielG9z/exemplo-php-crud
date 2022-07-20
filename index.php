@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="container">
+    
         <h1>CRUD - Sistema Vendas (Versão POO)</h1>
         <hr>
         <p><i>Versão usando Namespaces, Composer, Autoload,
@@ -15,7 +16,7 @@
         <hr>
 
         <p>Operações de <b>inserção</b>, <b>leitura</b>, <b>atualização</b> e <b>exclusão</b> de dados.</p>
-
+        
         <ul>
             <li><a href="fabricantes/listar.php">Fabricantes</a></li>
             <li><a href="produtos/listar.php">Produtos</a></li>
@@ -25,5 +26,6 @@
 
         <p><a href="contato.php">Entre em contato conosco</a></p>
     </div>
+    <ul><li><a href="contato.php">Entre em contato</a></li></ul>
 </body>
 </html>
