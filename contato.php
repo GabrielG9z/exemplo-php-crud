@@ -19,12 +19,12 @@ if(isset($_POST['enviar'])){
 
     try {
         
-        $phpmailer->isSMTP();
-        $phpmailer->Host = 'smtp.mailtrap.io';
-        $phpmailer->SMTPAuth = true;
-        $phpmailer->Port = 2525;
-        $phpmailer->Username = '675bb3ce4de643';
-        $phpmailer->Password = '8428fc52b6cf56';
+        $mail->isSMTP();
+        $mail->Host = 'smtp.mailtrap.io';
+        $mail->SMTPAuth = true;
+        $mail->Port = 2525;
+        $mail->Username = '675bb3ce4de643';
+        $mail->Password = '8428fc52b6cf56';
 
         //Recipients
         $mail->setFrom('from@example.com', 'Mailer');
