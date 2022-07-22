@@ -4,6 +4,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+use Sabberworm\CSS\Property\Charset;
 
 //Load Composer's autoloader
 require 'vendor/autoload.php';
@@ -16,11 +17,12 @@ if(isset($_POST['enviar'])){
 
     //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
+    $mail->CharSet = "UTF-8";
 
     try {
         
         $mail->isSMTP();
-        $mail->Host = 'smtp.mailtrap.io';
+        $mail->Host = 'genovez@sunioweb.com.br';
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
         $mail->Username = '675bb3ce4de643';
